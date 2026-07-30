@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estadísticas | Visor integral de infraestructura educativa</title>
+  <link rel="stylesheet" href="style.css?v=20260729-1">
+</head>
+<body class="stats-page">
+  <main class="stats-container">
+    <header class="stats-header">
+      <div><h1>Estadísticas del Visor integral de infraestructura educativa</h1><p>La página conserva el tema y los filtros activos del visor, pero también permite modificarlos aquí.</p></div>
+      <a href="index.html">Volver al visor</a>
+    </header>
+
+    <section class="stats-filter-panel">
+      <h2>Filtros de consulta</h2>
+      <div class="stats-filter-grid">
+        <div><label for="stTema">Información</label><select id="stTema"><option value="mantenimiento">Atención de Revisión Diagnóstico</option><option value="fam_regular">FAM Regular 2025</option><option value="programa_123">1, 2, 3 por mi Escuela</option><option value="fam_potenciado">FAM Potenciado 2025</option><option value="fam_reforzamiento">FAM Reforzamiento estructural</option><option value="ambas">Ambas mejoras</option><option value="obs_fractura">Revisión por cercanía a fracturamiento</option><option value="obs_subsidencia">Seguimiento por subsidencia alta</option><option value="obs_combinada">Observación territorial combinada</option></select></div>
+        <div><label for="stAlcaldia">Alcaldía</label><select id="stAlcaldia"><option value="">Todas</option></select></div>
+        <div><label for="stNivel">Nivel educativo</label><select id="stNivel"><option value="">Todos</option></select></div>
+        
+        <div><label for="stNecesidad">Variable de mantenimiento</label><select id="stNecesidad"><option value="">Todas</option></select></div>
+        <div><label for="stCCT">CCT</label><input id="stCCT" type="search" placeholder="Buscar CCT"></div>
+        <div><label for="stNombre">Escuela</label><input id="stNombre" type="search" placeholder="Buscar nombre"></div>
+        <div class="stats-actions"><button id="stAplicar">Aplicar</button><button id="stLimpiar" class="secondary">Limpiar</button></div>
+      </div>
+    </section>
+
+    <p id="statsContext" class="stats-context"></p>
+    <section class="cards">
+      <div class="card"><span id="stLabelTotal">Escuelas</span><strong id="stTotal">0</strong></div>
+      <div class="card"><span id="stLabelMax">Mayor número de necesidades</span><strong id="stMax">0</strong></div>
+      <div class="card"><span id="stLabelAux1">Alcaldías</span><strong id="stAux1">0</strong></div>
+      <div class="card"><span id="stLabelAux2">Proporción</span><strong id="stAux2">0%</strong></div>
+    </section>
+
+    <section class="grid-two">
+      <div class="table-panel"><h2 id="distributionTitle">Distribución de la selección</h2><table><thead><tr><th>Categoría</th><th>Escuelas</th><th>Proporción</th></tr></thead><tbody id="tablaDistribucion"></tbody></table></div>
+      <div class="table-panel"><h2>Resultados por nivel educativo</h2><table><thead><tr><th>Nivel</th><th>Escuelas</th><th>Mayor número de necesidades</th></tr></thead><tbody id="tablaNivel"></tbody></table></div>
+    </section>
+
+    <section class="table-panel"><h2>Resultados por alcaldía</h2><table><thead><tr><th>Alcaldía</th><th>Escuelas</th><th>Mayor número de necesidades</th><th>Con reforzamiento</th><th>Proporción</th></tr></thead><tbody id="tablaAlcaldia"></tbody></table></section>
+    <section class="table-panel"><h2 id="rankingTitle">Escuelas de la selección</h2><table><thead><tr><th>#</th><th>Escuela</th><th>CCT</th><th>Alcaldía</th><th>Nivel</th><th>Necesidades</th><th>Información seleccionada</th></tr></thead><tbody id="tablaRanking"></tbody></table></section>
+  </main>
+    <script src="estadisticas.js?v=20260729-1"></script>
+</body>
+</html>
